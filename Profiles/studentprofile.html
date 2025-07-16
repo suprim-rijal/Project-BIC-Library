@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIC Library - Student Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="student.css">
+</head>
+<body class="theme-light">
+    <div class="min-h-screen pt-16">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <a href="../index.html" class="logo">
+                        <i class="fas fa-book-open"></i> BIC Library
+                    </a>
+                    <div class="header-actions">
+                        
+                        <a href="../Bookcatalogue/Bookcatalogue.html" class="catalogue-link">
+                            <i class="fas fa-book"></i> Catalogue
+                        </a>
+                        <div class="profile-dropdown">
+                            <button class="profile-button">
+                                <div class="profile-avatar">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff&size=128" alt="Profile">
+                                </div>
+                                <span>John</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile Header -->
+        <section class="profile-header">
+            <div class="container">
+                <div class="profile-header-content">
+                    <div class="profile-info">
+                        <div class="profile-avatar-large">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff&size=128" alt="Profile">
+                        </div>
+                        <div class="profile-details">
+                            <h1 id="student-name">John Doe</h1>
+                            <p id="student-id">BIC-2023-001 | BBA Finance</p>
+                            <div class="profile-badges">
+                                <span>Gold Member</span>
+                                <span>3rd Semester</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <p>Books Borrowed</p>
+                            <p id="total-books">24</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>Current Reservations</p>
+                            <p id="current-reservations">3</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>Books Due</p>
+                            <p id="due-books">2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="container">
+            <!-- Navigation Tabs -->
+            <div class="card nav-tabs-container">
+                <div class="nav-tabs">
+                    <a href="#" data-tab="dashboard" class="nav-link active">Dashboard</a>
+                    <a href="#" data-tab="profile" class="nav-link">Profile</a>
+                    <a href="#" data-tab="reservations" class="nav-link">My Reservations</a>
+                    <a href="#" data-tab="history" class="nav-link">Reading History</a>
+                    <a href="#" data-tab="calendar" class="nav-link">Academic Calendar</a>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div id="dashboard-content" class="tab-content active">
+                <div class="dashboard-grid">
+                    <!-- Left Column -->
+                    <div class="dashboard-left">
+                        <!-- Welcome Card -->
+                        <div class="card welcome-card animate-fadeIn">
+                            <div class="welcome-content">
+                                <div class="welcome-text">
+                                    <h3>Welcome back, John!</h3>
+                                    <p>You have 2 books due soon and 3 active reservations. Keep up your reading streak!</p>
+                                </div>
+                                <div class="welcome-action">
+                                    <a href="../Bookcatalogue/Bookcatalogue.html" class="primary-button">
+                                        <i class="fas fa-book"></i> Browse Catalogue
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="stats-grid">
+                            <div class="card stat-card animate-fadeIn">
+                                <div class="stat-content">
+                                    <div class="stat-header">
+                                        <div>
+                                            <p>Reading Goal</p>
+                                            <p>8/12 books</p>
+                                        </div>
+                                        <div class="stat-icon blue-icon">
+                                            <i class="fas fa-bullseye"></i>
+                                        </div>
+                                    </div>
+                                    <div class="stat-progress">
+                                        <div class="progress-container">
+                                            <div class="progress-bar blue-bar" style="width: 66%"></div>
+                                        </div>
+                                        <p>66% completed</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card stat-card animate-fadeIn">
+                                <div class="stat-content">
+                                    <div class="stat-header">
+                                        <div>
+                                            <p>Current Streak</p>
+                                            <p>14 days</p>
+                                        </div>
+                                        <div class="stat-icon green-icon">
+                                            <i class="fas fa-fire"></i>
+                                        </div>
+                                    </div>
+                                    <div class="stat-meta">
+                                        <p>Longest streak: 21 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card stat-card animate-fadeIn">
+                                <div class="stat-content">
+                                    <div class="stat-header">
+                                        <div>
+                                            <p>Library Points</p>
+                                            <p>1,245 pts</p>
+                                        </div>
+                                        <div class="stat-icon purple-icon">
+                                            <i class="fas fa-medal"></i>
+                                        </div>
+                                    </div>
+                                    <div class="stat-meta">
+                                        <p>Top 15% of students</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Due Soon Books -->
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Books Due Soon
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="due-books-list">
+                                    <div class="due-book-item overdue">
+                                        <div class="book-cover">
+                                            <img src="https://m.media-amazon.com/images/I/71Y5XQJQbBL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                        </div>
+                                        <div class="book-details">
+                                            <h4>Principles of Corporate Finance</h4>
+                                            <p>Richard A. Brealey</p>
+                                            <p><i class="fas fa-clock"></i> Due in 2 days</p>
+                                        </div>
+                                        <button class="renew-button">
+                                            <i class="fas fa-redo"></i> Renew
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="due-book-item active">
+                                        <div class="book-cover">
+                                            <img src="https://m.media-amazon.com/images/I/91b0yqzA+YL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                        </div>
+                                        <div class="book-details">
+                                            <h4>Marketing Management</h4>
+                                            <p>Philip Kotler</p>
+                                            <p><i class="fas fa-clock"></i> Due in 5 days</p>
+                                        </div>
+                                        <button class="renew-button">
+                                            <i class="fas fa-redo"></i> Renew
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Reading Activity Chart -->
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fas fa-chart-line"></i>
+                                    Your Reading Activity
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="readingChart" height="250"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="dashboard-right">
+                        <!-- Upcoming Events -->
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fas fa-calendar-alt"></i> Upcoming Events
+                                    <a href="#" data-tab="calendar" class="view-all">View All</a>
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="events-list">
+                                    <div class="event-item exam-event">
+                                        <div class="event-content">
+                                            <h5>Midterm Exams</h5>
+                                            <p>June 5, 2023 at 9:00 AM</p>
+                                        </div>
+                                        <div class="event-badge">
+                                            Exam
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="event-item assignment-event">
+                                        <div class="event-content">
+                                            <h5>Finance Assignment Due</h5>
+                                            <p>June 12, 2023 at 11:59 PM</p>
+                                        </div>
+                                        <div class="event-badge">
+                                            Assignment
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="event-item news-event">
+                                        <div class="event-content">
+                                            <h5>Library Workshop</h5>
+                                            <p>June 8, 2023 at 2:00 PM</p>
+                                        </div>
+                                        <div class="event-badge">
+                                            Event
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Recommended Books -->
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fas fa-bookmark"></i>
+                                    Recommended For You
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="recommended-books">
+                                    <div class="recommended-book">
+                                        <div class="book-cover-small">
+                                            <img src="https://m.media-amazon.com/images/I/81Wg+5JQ+RL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                        </div>
+                                        <div class="book-info">
+                                            <h4>Financial Accounting</h4>
+                                            <p>Walter T. Harrison Jr.</p>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="recommended-book">
+                                        <div class="book-cover-small">
+                                            <img src="https://m.media-amazon.com/images/I/71Y5XQJQbBL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                        </div>
+                                        <div class="book-info">
+                                            <h4>Principles of Corporate Finance</h4>
+                                            <p>Richard A. Brealey</p>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="recommended-book">
+                                        <div class="book-cover-small">
+                                            <img src="https://m.media-amazon.com/images/I/91b0yqzA+YL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                        </div>
+                                        <div class="book-info">
+                                            <h4>Marketing Management</h4>
+                                            <p>Philip Kotler</p>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="view-more">
+                                    <a href="../Bookcatalogue/Bookcatalogue.html">
+                                        View all recommendations <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Links -->
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fas fa-link"></i>
+                                    Quick Links
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="quick-links-grid">
+                                    <a href="#" class="quick-link">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <span>E-Resources</span>
+                                    </a>
+                                    <a href="#" class="quick-link">
+                                        <i class="fas fa-question-circle"></i>
+                                        <span>Library Help</span>
+                                    </a>
+                                    <a href="#" class="quick-link">
+                                        <i class="fas fa-user-graduate"></i>
+                                        <span>Student Portal</span>
+                                    </a>
+                                    <a href="#" class="quick-link">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <span>Academic Info</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div id="profile-content" class="tab-content">
+                <div class="profile-grid">
+                    <!-- Personal Information -->
+                    <div class="card animate-fadeIn">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-user-graduate"></i> Personal Information
+                                <button id="edit-personal-btn" class="edit-button">
+                                    <i class="fas fa-pencil-alt"></i> Edit
+                                </button>
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p>Student ID</p>
+                                        <p id="student-id-full">BIC-2023-001</p>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p>Email</p>
+                                        <p id="student-email-display">john.doe@bic.edu.np</p>
+                                        <input type="email" id="student-email-edit" class="editable-field" value="john.doe@bic.edu.np">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p>Program</p>
+                                        <p id="student-program-display">BBA Finance</p>
+                                        <input type="text" id="student-program-edit" class="editable-field" value="BBA Finance">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p>Semester</p>
+                                        <p id="student-semester-display">Third Semester</p>
+                                        <select id="student-semester-edit" class="editable-field">
+                                            <option>First Semester</option>
+                                            <option>Second Semester</option>
+                                            <option selected>Third Semester</option>
+                                            <option>Fourth Semester</option>
+                                            <option>Fifth Semester</option>
+                                            <option>Sixth Semester</option>
+                                            <option>Seventh Semester</option>
+                                            <option>Eighth Semester</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p>Member Since</p>
+                                        <p id="student-joined">January 15, 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="personal-btns" class="edit-buttons">
+                                <button id="save-personal-btn" class="save-btn">
+                                    <i class="fas fa-save"></i> Save
+                                </button>
+                                <button id="cancel-personal-btn" class="cancel-btn">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="card animate-fadeIn">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-address-book"></i> Contact Information
+                                <button id="edit-contact-btn" class="edit-button">
+                                    <i class="fas fa-pencil-alt"></i> Edit
+                                </button>
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p>Phone</p>
+                                        <p id="student-phone-display">+977 9841234567</p>
+                                        <input type="tel" id="student-phone-edit" class="editable-field" value="+977 9841234567">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p>Address</p>
+                                        <p id="student-address-display">Bharatpur-10, Chitwan</p>
+                                        <textarea id="student-address-edit" class="editable-field">Bharatpur-10, Chitwan</textarea>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-birthday-cake"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p>Date of Birth</p>
+                                        <p id="student-dob-display">March 15, 2002</p>
+                                        <input type="date" id="student-dob-edit" class="editable-field" value="2002-03-15">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <p>Emergency Contact</p>
+                                        <p id="student-emergency-display">Jane Doe (Mother) +977 9847654321</p>
+                                        <input type="text" id="student-emergency-edit" class="editable-field" value="Jane Doe (Mother) +977 9847654321">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="contact-btns" class="edit-buttons">
+                                <button id="save-contact-btn" class="save-btn">
+                                    <i class="fas fa-save"></i> Save
+                                </button>
+                                <button id="cancel-contact-btn" class="cancel-btn">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions & Stats -->
+                    <div class="profile-right">
+                        <div class="card book-promo">
+                            <div class="promo-content">
+                                <div>
+                                    <h4>Need a book?</h4>
+                                    <p>Browse our extensive collection</p>
+                                </div>
+                                <a href="../Bookcatalogue/Bookcatalogue.html" class="primary-button">
+                                    <i class="fas fa-book"></i> Catalogue
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h4>Account Security</h4>
+                            <div class="security-list">
+                                <div class="security-item">
+                                    <div class="security-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="security-details">
+                                        <p>Password</p>
+                                        <p>Last changed 3 months ago</p>
+                                    </div>
+                                    <button class="security-action">
+                                        Change
+                                    </button>
+                                </div>
+                                
+                                <div class="security-item">
+                                    <div class="security-icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="security-details">
+                                        <p>Two-factor Authentication</p>
+                                        <p>Add extra security</p>
+                                    </div>
+                                    <button class="security-action">
+                                        Enable
+                                    </button>
+                                </div>
+                                
+                                <div class="security-item">
+                                    <div class="security-icon">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <div class="security-details">
+                                        <p>Active Sessions</p>
+                                        <p>2 devices</p>
+                                    </div>
+                                    <button class="security-action">
+                                        View
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h4>Notification Preferences</h4>
+                            <div class="notification-list">
+                                <div class="notification-item">
+                                    <div class="notification-details">
+                                        <p>Email Notifications</p>
+                                        <p>Get updates via email</p>
+                                    </div>
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"><i class="fas fa-check"></i></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="notification-item">
+                                    <div class="notification-details">
+                                        <p>SMS Alerts</p>
+                                        <p>Important reminders</p>
+                                    </div>
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"><i class="fas fa-check"></i></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="notification-item">
+                                    <div class="notification-details">
+                                        <p>Push Notifications</p>
+                                        <p>App notifications</p>
+                                    </div>
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"><i class="fas fa-check"></i></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reservations Content -->
+            <div id="reservations-content" class="tab-content">
+                <div class="card animate-fadeIn">
+                    <div class="card-header">
+                        <h3>
+                            <i class="fas fa-bookmark"></i>
+                            My Current Reservations
+                        </h3>
+                        <div class="reservation-actions">
+                            <div class="filter-dropdown">
+                                <button>
+                                    <i class="fas fa-filter"></i>
+                                    <span>Filter</span>
+                                </button>
+                            </div>
+                            <button>
+                                <i class="fas fa-sort"></i>
+                                <span>Sort</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="reservations-container" class="reservations-list">
+                            <div class="reservation-item active">
+                                <div class="book-cover-small">
+                                    <img src="https://m.media-amazon.com/images/I/71Y5XQJQbBL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                </div>
+                                <div class="reservation-details">
+                                    <h4>Principles of Corporate Finance</h4>
+                                    <p>Richard A. Brealey</p>
+                                    <div class="reservation-status">
+                                        <span class="status-active">Active</span>
+                                        <span>Due: Jun 24, 2023</span>
+                                    </div>
+                                    <div class="reservation-meta">
+                                        <i class="fas fa-clock"></i> 14 days remaining
+                                    </div>
+                                </div>
+                                <div class="reservation-menu">
+                                    <button class="menu-toggle">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="menu-dropdown">
+                                        <a href="#">
+                                            <i class="fas fa-redo"></i> Renew
+                                        </a>
+                                        <a href="#">
+                                            <i class="fas fa-info-circle"></i> Details
+                                        </a>
+                                        <a href="#">
+                                            <i class="fas fa-times"></i> Cancel
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="reservation-item active">
+                                <div class="book-cover-small">
+                                    <img src="https://m.media-amazon.com/images/I/81Wg+5JQ+RL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                </div>
+                                <div class="reservation-details">
+                                    <h4>Financial Accounting</h4>
+                                    <p>Walter T. Harrison Jr.</p>
+                                    <div class="reservation-status">
+                                        <span class="status-active">Active</span>
+                                        <span>Due: Jun 29, 2023</span>
+                                    </div>
+                                    <div class="reservation-meta">
+                                        <i class="fas fa-clock"></i> 19 days remaining
+                                    </div>
+                                </div>
+                                <div class="reservation-menu">
+                                    <button class="menu-toggle">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="menu-dropdown">
+                                        <a href="#">
+                                            <i class="fas fa-redo"></i> Renew
+                                        </a>
+                                        <a href="#">
+                                            <i class="fas fa-info-circle"></i> Details
+                                        </a>
+                                        <a href="#">
+                                            <i class="fas fa-times"></i> Cancel
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="reservation-item overdue">
+                                <div class="book-cover-small">
+                                    <img src="https://m.media-amazon.com/images/I/91b0yqzA+YL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                </div>
+                                <div class="reservation-details">
+                                    <h4>Marketing Management</h4>
+                                    <p>Philip Kotler</p>
+                                    <div class="reservation-status">
+                                        <span class="status-overdue">Overdue</span>
+                                        <span>Due: Jun 20, 2023</span>
+                                        <span class="fine">Fine: Rs. 50</span>
+                                    </div>
+                                    <div class="reservation-meta overdue-meta">
+                                        <i class="fas fa-exclamation-circle"></i> 2 days overdue
+                                    </div>
+                                </div>
+                                <div class="reservation-menu">
+                                    <button class="menu-toggle">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="menu-dropdown">
+                                        <a href="#">
+                                            <i class="fas fa-redo"></i> Renew
+                                        </a>
+                                        <a href="#">
+                                            <i class="fas fa-info-circle"></i> Details
+                                        </a>
+                                        <a href="#">
+                                            <i class="fas fa-rupee-sign"></i> Pay Fine
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reading History Content -->
+            <div id="history-content" class="tab-content">
+                <div class="card animate-fadeIn">
+                    <div class="card-header">
+                        <h3>
+                            <i class="fas fa-history"></i>
+                            Reading History
+                        </h3>
+                        <div class="history-actions">
+                            <div class="filter-dropdown">
+                                <button>
+                                    <i class="fas fa-filter"></i>
+                                    <span>Filter</span>
+                                </button>
+                            </div>
+                            <button>
+                                <i class="fas fa-sort"></i>
+                                <span>Sort</span>
+                            </button>
+                            <button>
+                                <i class="fas fa-download"></i>
+                                <span>Export</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="reading-history-container" class="history-list">
+                            <div class="history-item">
+                                <div class="book-cover-small">
+                                    <img src="https://m.media-amazon.com/images/I/71Y5XQJQbBL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                </div>
+                                <div class="history-details">
+                                    <h4>Principles of Corporate Finance</h4>
+                                    <p>Richard A. Brealey</p>
+                                    <div class="history-rating">
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span>May 15 - May 30, 2023</span>
+                                    </div>
+                                    <div class="history-meta">
+                                        <i class="fas fa-book-open"></i> 14 days borrowed
+                                    </div>
+                                </div>
+                                <button class="reborrow-button">
+                                    <i class="fas fa-redo"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="history-item">
+                                <div class="book-cover-small">
+                                    <img src="https://m.media-amazon.com/images/I/91b0yqzA+YL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                </div>
+                                <div class="history-details">
+                                    <h4>Marketing Management</h4>
+                                    <p>Philip Kotler</p>
+                                    <div class="history-rating">
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span>Apr 10 - Apr 25, 2023</span>
+                                    </div>
+                                    <div class="history-meta">
+                                        <i class="fas fa-book-open"></i> 15 days borrowed
+                                    </div>
+                                </div>
+                                <button class="reborrow-button">
+                                    <i class="fas fa-redo"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="history-item">
+                                <div class="book-cover-small">
+                                    <img src="https://m.media-amazon.com/images/I/81Wg+5JQ+RL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                </div>
+                                <div class="history-details">
+                                    <h4>Financial Accounting</h4>
+                                    <p>Walter T. Harrison Jr.</p>
+                                    <div class="history-rating">
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span>Mar 5 - Mar 20, 2023</span>
+                                    </div>
+                                    <div class="history-meta">
+                                        <i class="fas fa-book-open"></i> 15 days borrowed
+                                    </div>
+                                </div>
+                                <button class="reborrow-button">
+                                    <i class="fas fa-redo"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="history-item">
+                                <div class="book-cover-small">
+                                    <img src="https://m.media-amazon.com/images/I/71Y5XQJQbBL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                                </div>
+                                <div class="history-details">
+                                    <h4>Financial Management</h4>
+                                    <p>Eugene F. Brigham</p>
+                                    <div class="history-rating">
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span>Feb 12 - Feb 27, 2023</span>
+                                    </div>
+                                    <div class="history-meta">
+                                        <i class="fas fa-book-open"></i> 15 days borrowed
+                                    </div>
+                                </div>
+                                <button class="reborrow-button">
+                                    <i class="fas fa-redo"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="load-more">
+                            <button>
+                                <i class="fas fa-chevron-down"></i>
+                                <span>Load More</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Content -->
+            <div id="calendar-content" class="tab-content">
+                <div class="calendar-grid">
+                    <div class="calendar-left">
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <div class="calendar-header">
+                                    <h3>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Academic Calendar
+                                    </h3>
+                                    <div class="calendar-nav">
+                                        <button id="prev-month">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button id="next-month">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h4 id="current-month">June 2023</h4>
+                                <div class="calendar-weekdays">
+                                    <div>Sun</div>
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                </div>
+                                <div id="calendar-days" class="calendar-days-grid">
+                                    <!-- Calendar days will be dynamically loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fas fa-calendar-check"></i>
+                                    Library Events
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="library-events">
+                                    <div class="library-event">
+                                        <div class="event-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="event-details">
+                                            <h4>Library Orientation</h4>
+                                            <p>June 8, 2023 | 2:00 PM - 4:00 PM</p>
+                                            <p>New student orientation to library resources and services.</p>
+                                            <button>
+                                                <i class="fas fa-plus-circle"></i> Add to Calendar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="library-event">
+                                        <div class="event-icon">
+                                            <i class="fas fa-chalkboard-teacher"></i>
+                                        </div>
+                                        <div class="event-details">
+                                            <h4>Research Workshop</h4>
+                                            <p>June 15, 2023 | 3:00 PM - 5:00 PM</p>
+                                            <p>Learn advanced research techniques and citation tools.</p>
+                                            <button>
+                                                <i class="fas fa-plus-circle"></i> Add to Calendar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="library-event">
+                                        <div class="event-icon">
+                                            <i class="fas fa-book-reader"></i>
+                                        </div>
+                                        <div class="event-details">
+                                            <h4>Book Club Meeting</h4>
+                                            <p>June 22, 2023 | 4:00 PM - 6:00 PM</p>
+                                            <p>Discussion of "The Psychology of Money" by Morgan Housel.</p>
+                                            <button>
+                                                <i class="fas fa-plus-circle"></i> Add to Calendar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-right">
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fas fa-bell"></i>
+                                    Upcoming Events
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div id="upcoming-events" class="upcoming-events-list">
+                                    <div class="upcoming-event exam-event">
+                                        <div class="event-content">
+                                            <h5>Midterm Exams</h5>
+                                            <p>June 5, 2023 at 9:00 AM</p>
+                                        </div>
+                                        <div class="event-badge">
+                                            Exam
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="upcoming-event assignment-event">
+                                        <div class="event-content">
+                                            <h5>Finance Assignment Due</h5>
+                                            <p>June 12, 2023 at 11:59 PM</p>
+                                        </div>
+                                        <div class="event-badge">
+                                            Assignment
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="upcoming-event news-event">
+                                        <div class="event-content">
+                                            <h5>Library Workshop</h5>
+                                            <p>June 8, 2023 at 2:00 PM</p>
+                                        </div>
+                                        <div class="event-badge">
+                                            Event
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="upcoming-event due-event">
+                                        <div class="event-content">
+                                            <h5>Book Return Due</h5>
+                                            <p>June 18, 2023 at 5:00 PM</p>
+                                        </div>
+                                        <div class="event-badge">
+                                            Due
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="upcoming-event exam-event">
+                                        <div class="event-content">
+                                            <h5>Final Exams</h5>
+                                            <p>June 20, 2023 at 9:00 AM</p>
+                                        </div>
+                                        <div class="event-badge">
+                                            Exam
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fas fa-book"></i>
+                                    Library Hours
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="hours-list">
+                                    <div class="hours-item">
+                                        <span>Sunday - Thursday</span>
+                                        <span>7:30 AM - 7:00 PM</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span>Friday</span>
+                                        <span>7:30 AM - 5:00 PM</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span>Saturday</span>
+                                        <span>Closed</span>
+                                    </div>
+                                </div>
+                                <div class="holidays-section">
+                                    <h4>Upcoming Holidays</h4>
+                                    <div class="holidays-list">
+                                        <div class="holiday-item">
+                                            <span>June 29</span>
+                                            <span>National Day</span>
+                                            <span>Closed</span>
+                                        </div>
+                                        <div class="holiday-item">
+                                            <span>July 16</span>
+                                            <span>University Day</span>
+                                            <span>Closed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card animate-fadeIn">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fas fa-question-circle"></i>
+                                    Need Help?
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="help-links">
+                                    <a href="#" class="help-link">
+                                        <div class="help-icon">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                        <div class="help-details">
+                                            <h4>Call Librarian</h4>
+                                            <p>+977 56-123456</p>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="#" class="help-link">
+                                        <div class="help-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="help-details">
+                                            <h4>Email Support</h4>
+                                            <p>library@bic.edu.np</p>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="#" class="help-link">
+                                        <div class="help-icon">
+                                            <i class="fas fa-comments"></i>
+                                        </div>
+                                        <div class="help-details">
+                                            <h4>Live Chat</h4>
+                                            <p>Available 9AM-5PM</p>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="#" class="help-link">
+                                        <div class="help-icon">
+                                            <i class="fas fa-question"></i>
+                                        </div>
+                                        <div class="help-details">
+                                            <h4>FAQs</h4>
+                                            <p>Common questions</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="student.js"></script>
+</body>
+</html>

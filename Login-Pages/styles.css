@@ -1,0 +1,174 @@
+/* Reset and base layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main auth container */
+.auth-container {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header styles */
+.header {
+    background-color: #003366;
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.header p {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: #bfdbfe;
+}
+
+/* Form wrapper */
+.form-wrapper {
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+/* Form input groups */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    outline: none;
+}
+
+/* Checkbox and label */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox {
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-size: 0.875rem;
+    color: #374151;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    width: 100%;
+    background-color:#ff6600;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.btn:hover {
+    background-color: #fffdfd;
+    color: #ff6600;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #3b82f6;
+}
+
+/* Link and toggle form */
+.form-footer {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin-top: 1rem;
+}
+
+.link {
+    color: #0f0a03;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #1d4ed8;
+}
+
+/* Error state */
+.password-error {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #ef4444;
+    display: none;
+}
+
+.error-border {
+    border-color: #ef4444 !important;
+}
+
+.error-border:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <div class="header">
+      <h1>Welcome Student</h1>
+      <p>Please log in to continue</p>
+    </div>
+
+    <div class="form-wrapper">
+      <form id="login-form">
+        <h2 class="form-title">Login</h2>
+
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email</label>
+          <input type="email" id="login-email" class="input-field" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-password">Password</label>
+          <input type="password" id="login-password" class="input-field" required />
+          <div class="password-error" id="login-error">Invalid email or password</div>
+        </div>
+
+        <div class="form-group checkbox-container">
+          <input type="checkbox" id="remember" class="checkbox" />
+          <label for="remember" class="checkbox-label">Remember Me</label>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+
+        <p class="form-footer">
+          Don't have an account?
+          <a href="student-signup.html" class="link">Sign up</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Login successful!");
+    });
+  </script>
+</body>
+</html>

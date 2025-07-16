@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BIC Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Admin Dashboard Layout -->
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIC Library</span>
+            </div>
+            
+            <div class="admin-profile">
+                <div class="admin-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="admin-info">
+                    <h4>Admin User</h4>
+                    <p>Super Administrator</p>
+                </div>
+            </div>
+            
+            <nav class="admin-nav">
+                <ul>
+                    <li class="active"><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+                    <li><a href="#books"><i class="fas fa-book"></i> <span>Book Management</span></a></li>
+                    <li><a href="#users"><i class="fas fa-users"></i> <span>User Management</span></a></li>
+                    <li><a href="#loans"><i class="fas fa-exchange-alt"></i> <span>Loan Management</span></a></li>
+                    <li><a href="#reservations"><i class="fas fa-bookmark"></i> <span>Reservations</span></a></li>
+                    <li><a href="#reports"><i class="fas fa-chart-bar"></i> <span>Reports</span></a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Navigation -->
+            <header class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <div class="admin-actions">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="notification-dropdown">
+                            <div class="notification-header">
+                                <h3>Notifications</h3>
+                            </div>
+                            <div class="notification-list">
+                                <a href="#" class="notification-item">
+                                    <p>5 new reservations pending approval</p>
+                                    <small>10 minutes ago</small>
+                                </a>
+                                <a href="#" class="notification-item">
+                                    <p>3 books overdue for return</p>
+                                    <small>1 hour ago</small>
+                                </a>
+                                <a href="#" class="notification-item">
+                                    <p>System backup completed</p>
+                                    <small>Yesterday</small>
+                                </a>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="#">View All</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <button class="user-menu-btn">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span>Admin User</span>
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="admin.html"><i class="fas fa-user"></i> Profile</a>
+                            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="admin-content tab-content active" id="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h3>2,458</h3>
+                            <p>Total Books</p>
+                            <small>+12% from last month</small>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h3>1,245</h3>
+                            <p>Active Users</p>
+                            <small>+8% from last month</small>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h3>387</h3>
+                            <p>Active Loans</p>
+                            <small>-5% from last month</small>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h3>23</h3>
+                            <p>Overdue Books</p>
+                            <small>+15% from last month</small>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity and Quick Actions -->
+                <div class="content-row">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Activity</h3>
+                            <a href="#">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>New book "Advanced Financial Management" added to collection</p>
+                                        <small>5 minutes ago</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>New student "Ramesh Shrestha" registered</p>
+                                        <small>25 minutes ago</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Book "Marketing Principles" returned by Sita Gurung</p>
+                                        <small>1 hour ago</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Book "Corporate Finance" overdue by Hari Bahadur</p>
+                                        <small>2 hours ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Quick Actions</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="actions-list">
+                                <button class="action-btn">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Add New Book</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>Register New User</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-undo"></i>
+                                    <span>Process Book Return</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Send Overdue Notices</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-file-export"></i>
+                                    <span>Generate Monthly Report</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loan Statistics -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Loan Statistics</h3>
+                        <div class="time-filter">
+                            <button class="active">Weekly</button>
+                            <button>Monthly</button>
+                            <button>Yearly</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                                <p>Loan statistics chart</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book Management Content -->
+            <div class="admin-content tab-content" id="books-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Book Management</h3>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            <span>Add New Book</span>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-row">
+                            <div class="form-group">
+                                <div class="relative">
+                                    <i class="fas fa-search absolute" style="left: 15px; top: 12px; color: #999;"></i>
+                                    <input type="text" placeholder="Search books..." class="form-control" style="padding-left: 40px;">
+                                </div>
+                            </div>
+                            <div class="form-group" style="display: flex; gap: 10px;">
+                                <select class="form-control">
+                                    <option>All Categories</option>
+                                    <option>Finance</option>
+                                    <option>Marketing</option>
+                                    <option>Management</option>
+                                    <option>Accounting</option>
+                                </select>
+                                <select class="form-control">
+                                    <option>All Status</option>
+                                    <option>Available</option>
+                                    <option>Checked Out</option>
+                                    <option>Reserved</option>
+                                    <option>Lost/Damaged</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Book ID</th>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Category</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>BK-1001</td>
+                                        <td>Principles of Corporate Finance</td>
+                                        <td>Richard A. Brealey</td>
+                                        <td>Finance</td>
+                                        <td><span class="badge badge-success">Available</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>BK-1002</td>
+                                        <td>Financial Accounting</td>
+                                        <td>Walter T. Harrison Jr.</td>
+                                        <td>Accounting</td>
+                                        <td><span class="badge badge-warning">Checked Out</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>BK-1003</td>
+                                        <td>Marketing Management</td>
+                                        <td>Philip Kotler</td>
+                                        <td>Marketing</td>
+                                        <td><span class="badge badge-primary">Reserved</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>BK-1004</td>
+                                        <td>Organizational Behavior</td>
+                                        <td>Stephen P. Robbins</td>
+                                        <td>Management</td>
+                                        <td><span class="badge badge-danger">Lost/Damaged</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>BK-1005</td>
+                                        <td>Investment Banking</td>
+                                        <td>Joshua Rosenbaum</td>
+                                        <td>Finance</td>
+                                        <td><span class="badge badge-success">Available</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                            <div style="font-size: 14px; color: var(--text-light);">
+                                Showing 1 to 5 of 24 entries
+                            </div>
+                            <div class="pagination">
+                                <div class="page-item">
+                                    <a href="#" class="page-link">&laquo;</a>
+                                </div>
+                                <div class="page-item active">
+                                    <a href="#" class="page-link">1</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">2</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">3</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">4</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">5</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">&raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Management Content -->
+            <div class="admin-content tab-content" id="users-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>User Management</h3>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add New User</span>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-row">
+                            <div class="form-group">
+                                <div class="relative">
+                                    <i class="fas fa-search absolute" style="left: 15px; top: 12px; color: #999;"></i>
+                                    <input type="text" placeholder="Search users..." class="form-control" style="padding-left: 40px;">
+                                </div>
+                            </div>
+                            <div class="form-group" style="display: flex; gap: 10px;">
+                                <select class="form-control">
+                                    <option>All Roles</option>
+                                    <option>Student</option>
+                                    <option>Faculty</option>
+                                    <option>Staff</option>
+                                    <option>Administrator</option>
+                                </select>
+                                <select class="form-control">
+                                    <option>All Status</option>
+                                    <option>Active</option>
+                                    <option>Inactive</option>
+                                    <option>Suspended</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>User ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ST-2023-001</td>
+                                        <td>Ramesh Shrestha</td>
+                                        <td>ramesh@bic.edu.np</td>
+                                        <td>Student</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FC-2021-005</td>
+                                        <td>Dr. Sunita Gurung</td>
+                                        <td>sunita.g@bic.edu.np</td>
+                                        <td>Faculty</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST-2023-042</td>
+                                        <td>Hari Bahadur</td>
+                                        <td>hari.b@bic.edu.np</td>
+                                        <td>Student</td>
+                                        <td><span class="badge badge-danger">Suspended</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>ST-2022-118</td>
+                                        <td>Sita Rai</td>
+                                        <td>sita.r@bic.edu.np</td>
+                                        <td>Student</td>
+                                        <td><span class="badge badge-warning">Inactive</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>AD-0001</td>
+                                        <td>Admin User</td>
+                                        <td>admin@bic.edu.np</td>
+                                        <td>Administrator</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                            <div style="font-size: 14px; color: var(--text-light);">
+                                Showing 1 to 5 of 1245 entries
+                            </div>
+                            <div class="pagination">
+                                <div class="page-item">
+                                    <a href="#" class="page-link">&laquo;</a>
+                                </div>
+                                <div class="page-item active">
+                                    <a href="#" class="page-link">1</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">2</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">3</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">4</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">5</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">&raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loan Management Content -->
+            <div class="admin-content tab-content" id="loans-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Loan Management</h3>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>Process Loan</span>
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-undo"></i>
+                                <span>Process Return</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-row">
+                            <div class="form-group">
+                                <div class="relative">
+                                    <i class="fas fa-search absolute" style="left: 15px; top: 12px; color: #999;"></i>
+                                    <input type="text" placeholder="Search loans..." class="form-control" style="padding-left: 40px;">
+                                </div>
+                            </div>
+                            <div class="form-group" style="display: flex; gap: 10px;">
+                                <select class="form-control">
+                                    <option>All Status</option>
+                                    <option>Active</option>
+                                    <option>Overdue</option>
+                                    <option>Returned</option>
+                                    <option>Lost/Damaged</option>
+                                </select>
+                                <select class="form-control">
+                                    <option>All Users</option>
+                                    <option>Students</option>
+                                    <option>Faculty</option>
+                                    <option>Staff</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Loan ID</th>
+                                        <th>Book</th>
+                                        <th>User</th>
+                                        <th>Borrowed Date</th>
+                                        <th>Due Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>LN-2023-0451</td>
+                                        <td>Principles of Corporate Finance</td>
+                                        <td>Ramesh Shrestha</td>
+                                        <td>2023-06-10</td>
+                                        <td>2023-06-24</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LN-2023-0452</td>
+                                        <td>Financial Accounting</td>
+                                        <td>Dr. Sunita Gurung</td>
+                                        <td>2023-06-05</td>
+                                        <td>2023-06-19</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LN-2023-0428</td>
+                                        <td>Marketing Management</td>
+                                        <td>Hari Bahadur</td>
+                                        <td>2023-05-28</td>
+                                        <td>2023-06-11</td>
+                                        <td><span class="badge badge-danger">Overdue</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LN-2023-0435</td>
+                                        <td>Organizational Behavior</td>
+                                        <td>Sita Rai</td>
+                                        <td>2023-06-02</td>
+                                        <td>2023-06-16</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LN-2023-0419</td>
+                                        <td>Investment Banking</td>
+                                        <td>Ramesh Shrestha</td>
+                                        <td>2023-05-22</td>
+                                        <td>2023-06-05</td>
+                                        <td><span class="badge badge-info">Returned</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                            <div style="font-size: 14px; color: var(--text-light);">
+                                Showing 1 to 5 of 387 entries
+                            </div>
+                            <div class="pagination">
+                                <div class="page-item">
+                                    <a href="#" class="page-link">&laquo;</a>
+                                </div>
+                                <div class="page-item active">
+                                    <a href="#" class="page-link">1</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">2</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">3</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">4</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">5</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">&raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reservation Management Content -->
+            <div class="admin-content tab-content" id="reservations-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Reservation Management</h3>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-bookmark"></i>
+                            <span>New Reservation</span>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-row">
+                            <div class="form-group">
+                                <div class="relative">
+                                    <i class="fas fa-search absolute" style="left: 15px; top: 12px; color: #999;"></i>
+                                    <input type="text" placeholder="Search reservations..." class="form-control" style="padding-left: 40px;">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option>All Status</option>
+                                    <option>Pending</option>
+                                    <option>Approved</option>
+                                    <option>Rejected</option>
+                                    <option>Completed</option>
+                                    <option>Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Reservation ID</th>
+                                        <th>Book</th>
+                                        <th>User</th>
+                                        <th>Request Date</th>
+                                        <th>Pickup By</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>RS-2023-0615</td>
+                                        <td>Principles of Corporate Finance</td>
+                                        <td>Ramesh Shrestha</td>
+                                        <td>2023-06-15</td>
+                                        <td>2023-06-18</td>
+                                        <td><span class="badge badge-warning">Pending</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-check"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-times"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>RS-2023-0614</td>
+                                        <td>Financial Accounting</td>
+                                        <td>Dr. Sunita Gurung</td>
+                                        <td>2023-06-14</td>
+                                        <td>2023-06-17</td>
+                                        <td><span class="badge badge-success">Approved</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>RS-2023-0613</td>
+                                        <td>Marketing Management</td>
+                                        <td>Hari Bahadur</td>
+                                        <td>2023-06-13</td>
+                                        <td>2023-06-16</td>
+                                        <td><span class="badge badge-danger">Rejected</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>RS-2023-0612</td>
+                                        <td>Organizational Behavior</td>
+                                        <td>Sita Rai</td>
+                                        <td>2023-06-12</td>
+                                        <td>2023-06-15</td>
+                                        <td><span class="badge badge-info">Completed</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>RS-2023-0611</td>
+                                        <td>Investment Banking</td>
+                                        <td>Ramesh Shrestha</td>
+                                        <td>2023-06-11</td>
+                                        <td>2023-06-14</td>
+                                        <td><span class="badge badge-danger">Cancelled</span></td>
+                                        <td>
+                                            <div style="display: flex; gap: 10px;">
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-eye"></i></button>
+                                                <button class="btn btn-outline" style="padding: 5px 10px;"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                            <div style="font-size: 14px; color: var(--text-light);">
+                                Showing 1 to 5 of 42 entries
+                            </div>
+                            <div class="pagination">
+                                <div class="page-item">
+                                    <a href="#" class="page-link">&laquo;</a>
+                                </div>
+                                <div class="page-item active">
+                                    <a href="#" class="page-link">1</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">2</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">3</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">4</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">5</a>
+                                </div>
+                                <div class="page-item">
+                                    <a href="#" class="page-link">&raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Content -->
+            <div class="admin-content tab-content" id="reports-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Reports & Analytics</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-row">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Generate Report</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label class="form-label">Report Type</label>
+                                            <select class="form-control">
+                                                <option>Select report type</option>
+                                                <option>Book Circulation</option>
+                                                <option>User Activity</option>
+                                                <option>Overdue Books</option>
+                                                <option>Inventory Status</option>
+                                                <option>Popular Titles</option>
+                                                <option>Financial Summary</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Date Range</label>
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                                <input type="date" class="form-control">
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Format</label>
+                                            <div style="display: flex; gap: 15px;">
+                                                <label style="display: flex; align-items: center; gap: 5px;">
+                                                    <input type="radio" name="format" checked>
+                                                    <span>PDF</span>
+                                                </label>
+                                                <label style="display: flex; align-items: center; gap: 5px;">
+                                                    <input type="radio" name="format">
+                                                    <span>Excel</span>
+                                                </label>
+                                                <label style="display: flex; align-items: center; gap: 5px;">
+                                                    <input type="radio" name="format">
+                                                    <span>CSV</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                            Generate Report
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Quick Statistics</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div style="display: grid; gap: 10px;">
+                                        <div style="display: flex; justify-content: space-between; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+                                            <span>Most Borrowed Book</span>
+                                            <strong>Principles of Corporate Finance (24 loans)</strong>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+                                            <span>Most Active User</span>
+                                            <strong>Ramesh Shrestha (12 loans)</strong>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+                                            <span>Overdue Books</span>
+                                            <strong>23 (5.9% of active loans)</strong>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+                                            <span>Reservations This Month</span>
+                                            <strong>42 (15 approved)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="margin-top: 20px;">
+                            <div class="card-header">
+                                <h3>Monthly Loan Trends</h3>
+                                <select class="form-control" style="width: auto;">
+                                    <option>2023</option>
+                                    <option>2022</option>
+                                    <option>2021</option>
+                                </select>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-container">
+                                    <div class="chart-placeholder">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <p>Monthly loan trends chart</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="admin-content tab-content" id="settings-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>System Settings</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-row">
+                            <div class="card" style="flex: 2;">
+                                <div class="card-header">
+                                    <h3>General Settings</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label class="form-label">Library Name</label>
+                                            <input type="text" class="form-control" value="BIC Library">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Default Loan Period</label>
+                                            <select class="form-control">
+                                                <option>7 days</option>
+                                                <option selected>14 days</option>
+                                                <option>21 days</option>
+                                                <option>30 days</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Max Books Per User</label>
+                                            <input type="number" class="form-control" value="5" min="1" max="10">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Overdue Fine (per day)</label>
+                                            <div style="display: flex;">
+                                                <span style="display: inline-flex; align-items: center; padding: 0 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-right: none; border-radius: 4px 0 0 4px;">Rs.</span>
+                                                <input type="number" class="form-control" value="10" min="0" style="border-radius: 0 4px 4px 0;">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">
+                                            Save Settings
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card" style="flex: 1;">
+                                <div class="card-header">
+                                    <h3>System Information</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div style="display: grid; gap: 15px;">
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">System Version</span>
+                                            <span>v2.4.1</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">Last Backup</span>
+                                            <span>2023-06-15 02:00 AM</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">Database Size</span>
+                                            <span>45.2 MB</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">Server</span>
+                                            <span>Apache/2.4.41 (Ubuntu)</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">PHP Version</span>
+                                            <span>8.1.2</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee;">
+                                        <h3 style="font-size: 16px; margin-bottom: 15px;">System Maintenance</h3>
+                                        <div style="display: grid; gap: 10px;">
+                                            <button class="btn btn-outline" style="justify-content: space-between;">
+                                                <span>Clear Cache</span>
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                            <button class="btn btn-outline" style="justify-content: space-between;">
+                                                <span>Run Database Backup</span>
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                            <button class="btn btn-outline" style="justify-content: space-between;">
+                                                <span>Check for Updates</span>
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

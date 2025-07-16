@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIC Library - Book Catalogue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylebook.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-book-open"></i> BIC Library
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="navLinks">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../About/about.html">About</a></li>
+                    <li><a href="catalogue.html" class="active">Catalogue</a></li>
+                    <li class="dropdown">
+                        <a href="#">Login <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Login-Pages/student-login.html">Student Login</a>
+                            <a href="../Login-Pages/Admin-login.html">Admin Login</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Sign Up <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Login-Pages/student-signup.html">Student Sign Up</a>
+                            <a href="../Login-Pages/Admin-signup.html">Admin Sign Up</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Catalogue Header -->
+    <section class="catalogue-header">
+        <div class="container">
+            <h1 class="heading-font">Book Catalogue</h1>
+            <p>Explore our extensive collection of academic and general reading materials</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by title, author, ISBN...">
+            </div>
+            
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="courseFilter" class="filter-label">Course</label>
+                    <select id="courseFilter" class="filter-select">
+                        <option value="all">All Courses</option>
+                        <option value="BBA">BBA</option>
+                        <option value="BBA Finance">BBA Finance</option>
+                        <option value="BHM">BHM</option>
+                        <option value="BCIS">BCIS</option>
+                        <option value="BCSIT">BCSIT</option>
+                        <option value="MBA">MBA</option>
+                        <option value="MBS">MBS</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="semesterFilter" class="filter-label">Semester</label>
+                    <select id="semesterFilter" class="filter-select">
+                        <option value="all">All Semesters</option>
+                        <option value="1">First Semester</option>
+                        <option value="2">Second Semester</option>
+                        <option value="3">Third Semester</option>
+                        <option value="4">Fourth Semester</option>
+                        <option value="5">Fifth Semester</option>
+                        <option value="6">Sixth Semester</option>
+                        <option value="7">Seventh Semester</option>
+                        <option value="8">Eighth Semester</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="availabilityFilter" class="filter-label">Availability</label>
+                    <select id="availabilityFilter" class="filter-select">
+                        <option value="all">All Statuses</option>
+                        <option value="available">Available</option>
+                        <option value="reserved">Reserved</option>
+                        <option value="checked-out">Checked Out</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="typeFilter" class="filter-label">Book Type</label>
+                    <select id="typeFilter" class="filter-select">
+                        <option value="all">All Types</option>
+                        <option value="physical">Physical Books</option>
+                        <option value="ebook">E-Books</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Info -->
+        <div class="results-info">
+            <div class="results-count">Showing <span id="bookCount">0</span> books</div>
+            <div class="sort-container">
+                <span class="sort-label">Sort by:</span>
+                <select id="sortBy" class="sort-select">
+                    <option value="title-asc">Title (A-Z)</option>
+                    <option value="title-desc">Title (Z-A)</option>
+                    <option value="rating-desc">Highest Rated</option>
+                    <option value="rating-asc">Lowest Rated</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Book Grid -->
+        <div class="book-grid" id="bookGrid">
+            <!-- Books will be dynamically inserted here -->
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="noResults">
+            <i class="fas fa-book-open"></i>
+            <h3>No books found</h3>
+            <p>Try adjusting your search or filter criteria</p>
+        </div>
+    </main>
+
+    <!-- Book Detail View -->
+    <div class="book-detail-view" id="bookDetailView">
+        <div class="book-detail-container">
+            <button class="book-detail-close" id="bookDetailClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="book-detail-content" id="bookDetailContent">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i>
+        <span id="successText">Book reserved successfully!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="../index.html" class="footer-logo">
+                        <i class="fas fa-book-open"></i> BIC Library
+                    </a>
+                    <p>Providing exceptional library management solutions. Our mission is to make knowledge accessible to everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../About/about.html">About Us</a></li>
+                        <li><a href="Bookcatalogue.html">Catalogue</a></li>
+                        <li><a href="../Login-Pages/student-login.html">Student Portal</a></li>
+                        <li><a href="../Login-Pages/Admin-login.html">Admin Portal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>Hakim Chowk, Bharatpur-10, Chitwan</p>
+                    <p><i class="fas fa-phone"></i>056-598892, 598992</p>
+                    <p><i class="fas fa-envelope"></i> info@bostoncollege.edu.np</p>
+                    <p><i class="fas fa-clock"></i> Sun-Fri: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 BIC Library. All Rights Reserved. | <a style="color: #ff6600;" href="#">Privacy Policy</a> | <a style="color: #ff6600;" href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="stylebook.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | BIC Library</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+  
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-book-open"></i> BIC Library
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../About/about.html">About</a></li>
+                    <li><a href="../Modules/module.html">Modules</a></li>
+                    <li class="dropdown">
+                        <a href="#">Login <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Login-Pages/student-login.html">Student Login</a>
+                            <a href="../Login-Pages/Admin-login.html">Admin Login</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Sign Up <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Login-Pages/student-signup.html">Student Sign Up</a>
+                            <a href="../Login-Pages/Admin-signup.html">Admin Sign Up</a>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Feedback Form Section -->
+    <main>
+        <div class="feedback-container">
+            <div class="form-header">
+                <h2>
+                    <i class="fas fa-comment-alt"></i> Feedback & Suggestions
+                </h2>
+                <p>We value your input to improve our library services</p>
+            </div>
+            
+            <form id="feedbackForm" class="feedback-form">
+                <!-- Personal Information Section -->
+                <div class="form-section">
+                    <h3><i class="fas fa-user-circle"></i> Your Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <div class="input-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userRole">Your Role <span class="required">*</span></label>
+                        <div class="input-icon">
+                            <i class="fas fa-user-tag"></i>
+                            <select id="userRole" name="userRole" required>
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="student">Student</option>
+                                <option value="faculty">Faculty Member</option>
+                                <option value="staff">Library Staff</option>
+                                <option value="visitor">Visitor</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feedback Details Section -->
+                <div class="form-section">
+                    <h3><i class="fas fa-clipboard-list"></i> Feedback Details</h3>
+                    
+                    <div class="form-group">
+                        <label>Feedback Type <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="feedbackType" value="suggestion" required>
+                                <i class="fas fa-lightbulb" style="color: #f1c40f;"></i> Suggestion
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="feedbackType" value="complaint">
+                                <i class="fas fa-exclamation-circle" style="color: #e74c3c;"></i> Complaint
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="feedbackType" value="issue">
+                                <i class="fas fa-bug" style="color: #9b59b6;"></i> Technical Issue
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="feedbackType" value="general">
+                                <i class="fas fa-comment" style="color: #3498db;"></i> General Feedback
+                            </label>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="form-group">
+                        <label for="message">Your Feedback <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" required minlength="50" maxlength="500" placeholder="Please provide detailed feedback (50-500 characters)"></textarea>
+                        <div class="char-counter">
+                            <span id="charCount" class="char-count">0/500 characters</span>
+                            <span>Minimum 50 characters required</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Upload Screenshot (Optional)</label>
+                        <div class="file-upload">
+                            <label for="screenshot" class="file-upload-btn">
+                                <i class="fas fa-camera"></i> Choose File
+                                <input id="screenshot" name="screenshot" type="file" class="sr-only" accept="image/*">
+                            </label>
+                            <span id="file-name" class="file-name">No file chosen</span>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">PNG, JPG up to 2MB (for technical issues)</p>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Submit Feedback
+                </button>
+            </form>
+        </div>
+    </main>
+    
+   
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="../index.html" class="footer-logo">
+                    <i class="fas fa-book-open"></i> BIC Library
+                </a>
+                <p>Providing exceptional library management solutions. Our mission is to make knowledge accessible to everyone.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../About/about.html">About Us</a></li>
+                    <li><a href="../Modules/module.html">Modules</a></li>
+                    <li><a href="../Login-Pages/student-login.html">Student Portal</a></li>
+                    <li><a href="../Login-Pages/Admin-login.html">Admin Portal</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i>Hakim Chowk, Bharatpur-10, Chitwan</p>
+                <p><i class="fas fa-phone"></i>056-598892, 598992</p>
+                <p><i class="fas fa-envelope"></i> info@bostoncollege.edu.np</p>
+                <p><i class="fas fa-clock"></i> Sun-Fri: 8:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 BIC Library. All Rights Reserved. | <a style="color: #ff6600;" href="#">Privacy Policy</a> | <a style="color: #ff6600;" href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+
+    <script src="feedback.js"></script>
+    
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+            <p>Your feedback has been submitted successfully. We appreciate your input!</p>
+            <button id="closeModal" class="modal-close-btn">Close</button>
+        </div>
+    </div>
+    
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('show');
+        });
+        
+        // Character Counter
+        const message = document.getElementById('message');
+        const charCount = document.getElementById('charCount');
+        
+        message.addEventListener('input', function() {
+            const currentLength = this.value.length;
+            charCount.textContent = `${currentLength}/500 characters`;
+            
+            if (currentLength < 50) {
+                charCount.style.color = '#e74c3c';
+            } else {
+                charCount.style.color = '#27ae60';
+            }
+        });
+        
+        // File Upload Display
+        const fileInput = document.getElementById('screenshot');
+        const fileName = document.getElementById('file-name');
+        
+        fileInput.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                fileName.textContent = this.files[0].name;
+            } else {
+                fileName.textContent = 'No file chosen';
+            }
+        });
+        
+        // Form Submission
+        const feedbackForm = document.getElementById('feedbackForm');
+        const successModal = document.getElementById('successModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate minimum character count
+            if (message.value.length < 50) {
+                alert('Please provide at least 50 characters in your feedback message.');
+                return;
+            }
+            
+            // In a real application, you would send the data to a server here
+            console.log('Form submitted with data:', {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                userRole: document.getElementById('userRole').value,
+                feedbackType: document.querySelector('input[name="feedbackType"]:checked').value,
+                rating: document.querySelector('input[name="rating"]:checked')?.value || 'Not rated',
+                message: message.value,
+                screenshot: fileInput.files.length > 0 ? fileInput.files[0].name : 'No file'
+            });
+            
+            // Show success modal
+            successModal.style.display = 'flex';
+            
+            // Reset form
+            this.reset();
+            charCount.textContent = '0/500 characters';
+            charCount.style.color = '#666';
+            fileName.textContent = 'No file chosen';
+        });
+        
+        // Close Modal
+        closeModal.addEventListener('click', function() {
+            successModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        successModal.addEventListener('click', function(e) {
+            if (e.target === successModal) {
+                successModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

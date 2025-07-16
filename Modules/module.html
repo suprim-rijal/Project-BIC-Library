@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIC Library - Modules</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="modules.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-book-open"></i> BIC Library
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../About/about.html">About</a></li>
+                    <li><a href="module.html" class="active">Modules</a></li>
+                    <li class="dropdown">
+                        <a href="#">Login <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Login-Pages/student-login.html">Student Login</a>
+                            <a href="../Login-Pages/Admin-login.html">Admin Login</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Sign Up <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Login-Pages/student-signup.html">Student Sign Up</a>
+                            <a href="../Login-Pages/Admin-signup.html">Admin Sign Up</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Library Modules</h1>
+            <p>Discover the powerful features that enhance your academic journey</p>
+        </div>
+    </section>
+    
+    <!-- Modules Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Our Comprehensive Modules</h2>
+            <p>Explore all the tools available to support your learning and research</p>
+        </div>
+        
+        <div class="modules-grid">
+            <!-- Book Search & Catalogue -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="module-title">Book Search & Catalogue</h3>
+                </div>
+                <div class="module-body">
+                    <p class="module-description">Browse and find books by title, author, or category with our comprehensive search system. Access detailed information about each resource in our collection.</p>
+                </div>
+                <div class="module-footer">
+                    <a href="../Bookcatalogue/Bookcatalogue.html" class="btn btn-primary">Explore Catalogue</a>
+                </div>
+            </div>
+            
+            <!-- Book Register & Availability -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="module-title">Book Register & Availability</h3>
+                </div>
+                <div class="module-body">
+                    <p class="module-description">Check issued and returned books as well as real-time availability status for all library materials. View borrowing history and current loans.</p>
+                </div>
+                <div class="module-footer">
+                    <a href="../Bookcatalogue/Bookcatalogue.html" class="btn btn-secondary">Check Availability</a>
+                </div>
+            </div>
+            
+         
+            
+            <!-- Alerts & Notifications -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="module-title">Alerts & Notifications</h3>
+                </div>
+                <div class="module-body">
+                    <p class="module-description">Receive updates on due dates, new arrivals, and important library announcements. Customize your notification preferences.</p>
+                </div>
+                <div class="module-footer">
+                    <a href="../Profiles/studentprofile.html" class="btn btn-secondary">View Alerts</a>
+                </div>
+            </div>
+            
+            <!-- E-Books & Digital Library -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-icon">
+                        <i class="fas fa-tablet-alt"></i>
+                    </div>
+                    <h3 class="module-title">E-Books & Digital Library</h3>
+                </div>
+                <div class="module-body">
+                    <p class="module-description">Access PDFs, online journals, and other digital resources from anywhere, anytime. Download materials for offline reading.</p>
+                </div>
+                <div class="module-footer">
+                    <a href="../Bookcatalogue/Bookcatalogue.html" class="btn btn-primary">Browse E-Resources</a>
+                </div>
+            </div>
+            
+            <!-- Calendar & Reminders -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="module-title">Calendar & Reminders</h3>
+                </div>
+                <div class="module-body">
+                    <p class="module-description">View academic dates and manage book return alerts with our integrated calendar system. Sync with your personal calendar.</p>
+                </div>
+                <div class="module-footer">
+                    <a href="../Profiles/studentprofile.html" class="btn btn-secondary">View Calendar</a>
+                </div>
+            </div>
+            
+            <!-- Academic Resources -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="module-title">Academic Resources</h3>
+                </div>
+                <div class="module-body">
+                    <p class="module-description">Access syllabus documents, past examination papers, and recommended readings by program. Find course-specific materials.</p>
+                </div>
+                <div class="module-footer">
+                    <a href="../Profiles/studentprofile.html" class="btn btn-primary">View Resources</a>
+                </div>
+            </div>
+            
+            <!-- Catalogue & Reservation -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <h3 class="module-title">Catalogue & Reservation</h3>
+                </div>
+                <div class="module-body">
+                    <p class="module-description">Browse our complete collection and reserve physical books for pickup at your convenience. Manage your reservations.</p>
+                </div>
+                <div class="module-footer">
+                    <a href="../Bookcatalogue/Bookcatalogue.html" class="btn btn-secondary">Reserve Books</a>
+                </div>
+            </div>
+            
+           
+            
+            <!-- Usage Statistics -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="module-title">Usage Statistics</h3>
+                </div>
+                <div class="module-body">
+                    <p class="module-description">Track your personal borrowing history and view reading patterns over time. Get personalized recommendations.</p>
+                </div>
+                <div class="module-footer">
+                    <a href="../Profiles/admin.html" class="btn btn-secondary">View Stats</a>
+                </div>
+            </div>
+            
+            <!-- Feedback & Suggestions -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3 class="module-title">Feedback & Suggestions</h3>
+                </div>
+                <div class="module-body">
+                    <p class="module-description">Share your thoughts, submit feedback, or make suggestions to improve our services. We value your input.</p>
+                </div>
+                <div class="module-footer">
+                    <a href="../Feedback/feedback.html" class="btn btn-primary">Provide Feedback</a>
+                </div>
+            </div>
+            
+          
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="../index.html" class="footer-logo">
+                    <i class="fas fa-book-open"></i> BIC Library
+                </a>
+                <p>Providing exceptional library management solutions. Our mission is to make knowledge accessible to everyone.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../About/about.html">About Us</a></li>
+                    <li><a href="modules.html">Modules</a></li>
+                    <li><a href="../Login-Pages/student-login.html">Student Portal</a></li>
+                    <li><a href="../Login-Pages/Admin-login.html">Admin Portal</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i>Hakim Chowk, Bharatpur-10, Chitwan</p>
+                <p><i class="fas fa-phone"></i>056-598892, 598992</p>
+                <p><i class="fas fa-envelope"></i> info@bostoncollege.edu.np</p>
+                <p><i class="fas fa-clock"></i> Sun-Fri: 8:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 BIC Library. All Rights Reserved. | <a style="color: #ff6600;" href="#">Privacy Policy</a> | <a style="color: #ff6600;" href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+<script src="modules.js"></script>
+</body>
+</html>

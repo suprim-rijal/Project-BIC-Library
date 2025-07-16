@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIC Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-book-open"></i> BIC Library
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="About/about.html">About</a></li>
+                    <li><a href="Modules/module.html">Modules</a></li>
+                    <li class="dropdown">
+                        <a href="#">Login <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="Login-Pages/student-login.html">Student Login</a>
+                            <a href="Login-Pages/Admin-login.html">Admin Login</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Sign Up <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="Login-Pages/student-signup.html">Student Sign Up</a>
+                            <a href="Login-Pages/Admin-signup.html">Admin Sign Up</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to BIC Library</h1>
+            <p>Empowering knowledge through digital ease</p>
+            <div class="btn-container">
+                <a href="Modules/module.html" class="btn">Explore Library</a>
+                <a href="About/about.html" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>What BIC Library Offers</h2>
+            <p>Discover our comprehensive library management solutions</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Extensive Collection</h3>
+                <p>Access thousands of books, journals, and digital resources from our vast collection.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Advanced Search</h3>
+                <p>Find exactly what you need with our powerful search tools and filtering options.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Secure Access</h3>
+                <p>Your data and privacy are protected with our robust security measures.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <h3>Notifications</h3>
+                <p>Get alerts for due dates, reservations, and important library announcements.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Usage Analytics</h3>
+                <p>Track your reading habits and discover personalized recommendations.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Our dedicated support team is always ready to assist you with any issues.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background-color: #f9f5eb;">
+        <div class="section-title">
+            <h2>Why Choose BIC Library</h2>
+            <p>Experience the difference with our exceptional services</p>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="booksCount">10,000+</div>
+                <h4 class="stat-title">Books Available</h4>
+                <p class="stat-desc">From classic literature to modern research</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number" id="usersCount">300+</div>
+                <h4 class="stat-title">Active Users</h4>
+                <p class="stat-desc">Students and faculty members trust our system</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number" id="supportCount">24/7</div>
+                <h4 class="stat-title">Support Available</h4>
+                <p class="stat-desc">We're always here when you need assistance</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portals Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Student & Admin Portals</h2>
+            <p>Access your personalized dashboard</p>
+        </div>
+        
+        <div class="portals-container">
+            <div class="portal-card">
+                <div class="portal-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Student Portal</h3>
+                <p>Access your account, browse the catalog, check due dates, and manage your loans.</p>
+                <a href="Profiles/studentprofile.html" class="btn">Login as Student</a>
+            </div>
+            
+            <div class="portal-card">
+                <div class="portal-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Admin Portal</h3>
+                <p>Manage library resources, users, loans, and generate comprehensive reports.</p>
+                <a href="Profiles/admin.html" class="btn">Login as Admin</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+<section class="section" style="background-color: #f9f5eb;">
+  <div class="section-title" style="text-align: center;">
+    <h2>What Our Users Say</h2>
+    <p>Hear from our satisfied students and faculty</p>
+  </div>
+
+  <div class="testimonials-wrapper">
+    <button class="scroll-btn left-btn">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="testimonials-container" id="testimonialsContainer">
+      <div class="testimonials-track">
+        <!-- Testimonial Cards -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">BIC Library has transformed how I access resources for my research. The intuitive interface and powerful search tools save me hours every week.</p>
+          <div class="testimonial-author">
+            <img src="#" alt="Sarah Johnson" class="author-img">
+            <div class="author-info">
+              <h4>Person 1</h4>
+              <p>Researcher</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">As a librarian, the admin portal gives me complete control over our collection with minimal effort. The reporting features are particularly impressive.</p>
+          <div class="testimonial-author">
+            <img src="#" alt="Michael Chen" class="author-img">
+            <div class="author-info">
+              <h4>Person 2</h4>
+              <p>Librarian</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">The mobile-friendly design means I can access the library anytime, anywhere. The notification system ensures I never miss a due date.</p>
+          <div class="testimonial-author">
+            <img src="#" alt="Emily Rodriguez" class="author-img">
+            <div class="author-info">
+              <h4>Person 3</h4>
+              <p>Student</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">The recommendation system has helped me discover so many relevant books I wouldn't have found otherwise. It's like having a personal librarian!</p>
+          <div class="testimonial-author">
+            <img src="#" alt="David Wilson" class="author-img">
+            <div class="author-info">
+              <h4>Person 4</h4>
+              <p>Faculty</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">The recommendation system has helped me discover so many relevant books I wouldn't have found otherwise. It's like having a personal librarian!</p>
+          <div class="testimonial-author">
+            <img src="#" alt="David Wilson" class="author-img">
+            <div class="author-info">
+              <h4>Person 5</h4>
+              <p>Faculty</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="scroll-btn right-btn">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+.testimonials-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.testimonials-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  flex-grow: 1;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.testimonial-card {
+  scroll-snap-align: start;
+  flex: 0 0 80%;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.author-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.author-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.scroll-btn {
+  background: #003366;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.scroll-btn:hover {
+  background: #ff6600;
+}
+
+.scroll-btn i {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    flex: 0 0 90%;
+  }
+
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+</style>
+
+<!-- JS -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('testimonialsContainer');
+  const card = container.querySelector('.testimonial-card');
+  const leftBtn = document.querySelector('.left-btn');
+  const rightBtn = document.querySelector('.right-btn');
+
+  const getScrollAmount = () => card.offsetWidth + 32; // 32px = gap
+
+  leftBtn.addEventListener('click', () => {
+    container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+  });
+
+  rightBtn.addEventListener('click', () => {
+    container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+  });
+});
+</script>
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-book-open"></i> BIC Library
+                </a>
+                <p>Providing exceptional library management solutions. Our mission is to make knowledge accessible to everyone.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About/about.html">About Us</a></li>
+                    <li><a href="Modules/module.html">Modules</a></li>
+                    <li><a href="Login-Pages/student-login.html">Student Portal</a></li>
+                    <li><a href="Login-Pages/Admin-login.html">Admin Portal</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i>Hakim Chowk, Bharatpur-10, Chitwan</p>
+                <p><i class="fas fa-phone"></i>056-598892, 598992</p>
+                <p><i class="fas fa-envelope"></i> info@bostoncollege.edu.np</p>
+                <p><i class="fas fa-clock"></i> Sun-Fri: 8:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 BIC Library. All Rights Reserved. | <a style="color: #ff6600;" href="#">Privacy Policy</a> | <a style="color: #ff6600;" href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

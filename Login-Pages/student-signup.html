@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Sign Up</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <div class="header">
+      <h1>Welcome Student</h1>
+      <p>Please sign up to create your account</p>
+    </div>
+
+    <div class="form-wrapper">
+      <form id="signup-form">
+        <h2 class="form-title">Sign Up</h2>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" class="input-field" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-email">Email</label>
+          <input type="email" id="signup-email" class="input-field" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-password">Password</label>
+          <input type="password" id="signup-password" class="input-field" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" class="input-field" required />
+          <div class="password-error" id="signup-error">Passwords do not match</div>
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+
+        <p class="form-footer">
+          Already have an account?
+          <a href="student-login.html" class="link">Log in</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("signup-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const pwd = document.getElementById("signup-password").value;
+      const confirmPwd = document.getElementById("confirm-password").value;
+      const error = document.getElementById("signup-error");
+
+      if (pwd !== confirmPwd) {
+        error.style.display = "block";
+        document.getElementById("confirm-password").classList.add("error-border");
+      } else {
+        error.style.display = "none";
+        alert("Signup successful!");
+      }
+    });
+  </script>
+</body>
+</html>

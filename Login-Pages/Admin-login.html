@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login - Library Management System</title>
+  <link rel="stylesheet" href="styleadim.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="header">
+      <h1>BIC Library Management System</h1>
+      <p>Admin Portal</p>
+    </div>
+
+    <div class="form-wrapper">
+      <h2 class="form-title">Admin Login</h2>
+
+      <div id="login-error" class="password-error hidden">
+        <p id="login-error-text"></p>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-username" class="form-label">Username or Email</label>
+          <input type="text" id="login-username" class="input-field" placeholder="Enter username or email" required>
+        </div>
+
+        <div class="form-group" style="position: relative;">
+          <label for="login-password" class="form-label">Password</label>
+          <input type="password" id="login-password" class="input-field" placeholder="Enter password" required>
+          <span class="input-icon" onclick="togglePassword('login-password')" style="position: absolute; right: 10px; top: 38px; cursor: pointer;">
+            <i class="fas fa-eye" id="eye-icon"></i>
+          </span>
+        </div>
+
+        <div class="checkbox-container" style="justify-content: space-between;">
+          <div>
+            <input type="checkbox" id="remember-me" class="checkbox">
+            <label for="remember-me" class="checkbox-label">Remember me</label>
+          </div>
+          <a class="link" onclick="showForgotPassword()">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <div class="form-footer">
+        <p>Don't have an admin account? <a href="Admin-signup.html" class="link">Create Admin Account</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(fieldId) {
+      const field = document.getElementById(fieldId);
+      const icon = document.getElementById("eye-icon");
+
+      if (field.type === 'password') {
+        field.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+      } else {
+        field.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+      }
+    }
+
+    function showForgotPassword() {
+      const email = prompt("Enter your email to reset password:");
+      if (email && validateEmail(email)) {
+        alert(`Password reset link sent to ${email}`);
+      } else if (email !== null) {
+        alert("Invalid email address.");
+      }
+    }
+
+    function validateEmail(email) {
+      const re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      return re.test(email);
+    }
+
+    document.getElementById("login-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("login-username").value;
+      const password = document.getElementById("login-password").value;
+      const errorElement = document.getElementById("login-error");
+      const errorText = document.getElementById("login-error-text");
+
+      if (!username || !password) {
+        errorText.textContent = "Please enter both username and password.";
+        errorElement.classList.remove("hidden");
+        return;
+      }
+
+      if (username === "admin" && password === "Admin@123") {
+        alert("Login successful! Redirecting to admin dashboard...");
+        // window.location.href = "admin-dashboard.html";
+      } else {
+        errorText.textContent = "Invalid username or password.";
+        errorElement.classList.remove("hidden");
+      }
+    });
+  </script>
+</body>
+</html>
